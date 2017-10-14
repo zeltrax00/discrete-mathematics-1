@@ -42,7 +42,7 @@ void sinh()
             x[j] = t;
             break;
         }
-
+ 
     for (int a = i+1, b = n; a < b; ++a, --b)
     {
         int t = x[a];
