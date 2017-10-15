@@ -24,7 +24,10 @@ void kt()
 {
     for (int i = 1; i<=n; ++i)
         check[i] = true;
-    x[1] = 1;
+    x[1] = 1;       // Co dinh x[1] de giam bot thoi gian chay
+    for (int i = 1; i<n; ++i) //Khoi tao gia tri ban dau cho Fopt
+        Fopt += c[i][i+1];
+    Fopt += c[n][1];
 }
 
 int chiphi()
@@ -32,7 +35,7 @@ int chiphi()
     int cp = 0;
     for (int i = 1; i<n; ++i)
         cp += c[x[i]][x[i+1]];
-    cp += c[x[n]][x[1]];
+    cp += c[x[n]][x[1]];  // Chi phi di 1 vong roi quay tro ve diem xuat phat
 
     return cp;
 }
@@ -54,7 +57,7 @@ void Try(int i)
             check[j] = false;
             if (i == n)
             {
-                if (Fopt > chiphi())
+                if (Fopt > chiphi()) // Neu chi phi hien tai nho hon chi phi toi uu, update
                     update();
             }
             else Try(i+1);
@@ -82,10 +85,6 @@ int main()
 {
     nhap();
     kt();
-
-    for (int i = 1; i<n; ++i)
-        Fopt += c[i][i+1];
-    Fopt += c[n][1];
 
     Try(2);
 
