@@ -19,11 +19,11 @@ using namespace std;
 int n, Fopt;
 int x[100], Xopt[100], c[20][20];
 
-//Bai toan nguoi du lich
+//Thuat toan sinh hoan vi
 
 bool cuoi()
 {
-    for (int i = 1; i < n; ++i)
+    for (int i = 2; i < n; ++i)
         if (x[i] < x[i+1]) return false;
 
     return true;
@@ -42,7 +42,7 @@ void sinh()
             x[j] = t;
             break;
         }
- 
+
     for (int a = i+1, b = n; a < b; ++a, --b)
     {
         int t = x[a];
@@ -63,9 +63,7 @@ int chiphi()
     int cp = 0;
     for (int i = 1; i<n; ++i)
         cp += c[x[i]][x[i+1]];
-        
-    cp += c[x[n]][x[1]];
-    
+    cp+= c[x[n]][x[1]];
     return cp;
 }
 
@@ -82,7 +80,7 @@ void kt()
     for (int i = 1; i<=n; ++i)
         x[i] = i;
 
-    Fopt = chiphi(); //Khoi tao gia tri ban dau cho Fopt
+    Fopt = chiphi();
 }
 
 void nhap()
@@ -100,7 +98,7 @@ int main()
     kt();
     while(!cuoi())
     {
-        if (chiphi() < Fopt) //Neu co phuong an tot hon thi update
+        if (chiphi() < Fopt)
             update();
         sinh();
     }
