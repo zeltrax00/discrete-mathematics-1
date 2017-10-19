@@ -76,7 +76,7 @@ void in()
         cout << "Quy trinh "<< i << " lam viec " << Xopt[i] << '\n';
 
     cout << "Tong thoi gian: " << Fopt << endl;
-}
+} 
 
 int main()
 {
