@@ -27,7 +27,7 @@ void kt()
     x[1] = 1;       // Co dinh x[1] de giam bot thoi gian chay
     for (int i = 1; i<n; ++i) //Khoi tao gia tri ban dau cho Fopt
         Fopt += c[i][i+1];
-    Fopt += c[n][1];
+    Fopt += c[n][1] + 2;
 }
 
 int chiphi()
