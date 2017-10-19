@@ -15,9 +15,9 @@
 #include <iostream>
 using namespace std;
 
-int N, F, Fopt = 0;
-int c[20][20], x[20], Xopt[20];
-bool check[20];
+int N, F, Fopt = 0; // F la thoi gian hien tai, Fopt la thoi gian toi uu
+int c[20][20], x[20], Xopt[20]; // x[] la hoan vi cua cac cong viec
+bool check[20]; // Mang danh dau de sinh hoan vi
 
 void nhap()
 {
