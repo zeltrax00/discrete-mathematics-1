@@ -80,7 +80,7 @@ void kt()
     for (int i = 1; i<=n; ++i)
         x[i] = i;
 
-    Fopt = chiphi();
+    Fopt = chiphi() + 2;
 }
 
 void nhap()
