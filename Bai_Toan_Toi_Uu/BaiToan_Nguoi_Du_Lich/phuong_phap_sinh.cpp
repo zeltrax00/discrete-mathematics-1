@@ -102,6 +102,10 @@ int main()
             update();
         sinh();
     }
+    
+    if (chiphi() < Fopt)
+        update();
+    
     in();
 
     return 0;
