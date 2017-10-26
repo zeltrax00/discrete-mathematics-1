@@ -105,7 +105,9 @@ int main()
             if (F > Fopt) update();
         sinh();
     }
-
+    if (check())
+        if (F > Fopt) update();
+    
     in();
 
     return 0;
